@@ -1,4 +1,4 @@
-FROM tomcat:8.0.51-jre8-alpine
+FROM tomcat:8.5.41-jre8-alpine
 
 # Copy server binary
 COPY ./bug-predictor-api.war /usr/local/tomcat/webapps/bug-predictor-api.war
