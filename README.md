@@ -21,3 +21,7 @@ Run ```make stack/list``` to list all stacks and ```make stack/delete name=[NAME
 [Compute Engine Docs](https://cloud.google.com/compute/docs)
 
 [Deployment Manager Docs](https://cloud.google.com/deployment-manager/docs)
+
+[Docker Docs](https://docs.docker.com/)
+
+[Dockerfile Docs](https://docs.docker.com/engine/reference/builder/)
