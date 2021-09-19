@@ -1,4 +1,4 @@
-FROM tomcat:8.5.41-jre8-alpine
+FROM tomcat:9.0.20-jre8-alpine
 
 # Copy server binary
 COPY ./reasoner-api.war /usr/local/tomcat/webapps/reasoner-api.war
