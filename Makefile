@@ -12,11 +12,14 @@ help: ## Show this help
 
 ##
 
+stack/list: ## List stacks
+	gcloud deployment-manager deployments list
+
 stack/create: ## Create stack
 	gcloud deployment-manager deployments create $(name) --config $(file)
 
-stack/list: ## List stacks
-	gcloud deployment-manager deployments list
+stack/update: ## Update stack
+	gcloud deployment-manager deployments update $(name) --config $(file)
 
 stack/delete: ## Delete stack
 	gcloud deployment-manager deployments delete $(name)
