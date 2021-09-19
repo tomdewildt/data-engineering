@@ -3,7 +3,7 @@ resources:
     type: compute.v1.instance
     properties:
       zone: europe-west3-c
-      machineType: zones/europe-west3-c/machineTypes/e2-micro
+      machineType: zones/europe-west3-c/machineTypes/e2-medium
       disks:
         - deviceName: jads-delabs-shared-cpd-a8e3
           type: PERSISTENT
@@ -26,8 +26,9 @@ resources:
           - http
           - https
           - jupyter
-          - flask-1
-          - flask-2
+          - graphdb
+          - api-1
+          - api-2
 
   - name: jads-delabs-shared-fwr-allow-http
     type: compute.v1.firewall
@@ -68,28 +69,41 @@ resources:
           ports:
             - 8888
 
-  - name: jads-delabs-shared-fwr-allow-flask-1
+  - name: jads-delabs-shared-fwr-allow-graphdb
     type: compute.v1.firewall
     properties:
       priority: 1000
       targetTags:
-        - flask-1
+        - graphdb
       sourceRanges:
         - 0.0.0.0/0
       allowed:
         - IPProtocol: TCP
           ports:
-            - 5000
+            - 7200
 
-  - name: jads-delabs-shared-fwr-allow-flask-2
+  - name: jads-delabs-shared-fwr-allow-api-1
     type: compute.v1.firewall
     properties:
       priority: 1000
       targetTags:
-        - flask-2
+        - api-1
       sourceRanges:
         - 0.0.0.0/0
       allowed:
         - IPProtocol: TCP
           ports:
-            - 5001
+            - 8080
+
+  - name: jads-delabs-shared-fwr-allow-api-2
+    type: compute.v1.firewall
+    properties:
+      priority: 1000
+      targetTags:
+        - api-2
+      sourceRanges:
+        - 0.0.0.0/0
+      allowed:
+        - IPProtocol: TCP
+          ports:
+            - 9090
