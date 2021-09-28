@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  graphdb:
+    build:
+      context: ../lab-3/graphdb
+    ports:
+      - 7200:7200
+
+  semantic_reasoner:
+    build:
+      context: ../lab-3/semantic-reasoner
+    depends_on:
+      - graphdb
+    environment:
+      - bugPredictorServer=http://tosca_smell_predictor:8080/
+      - graphdb=http://graphdb:7200
+      - reasonerServer=http://semantic_reasoner:8080/
+    ports:
+      - 8080:8080
+
+  tosca_smell_predictor:
+    build:
+      context: ../lab-3/tosca-smell-predictor
+    depends_on:
+      - semantic_reasoner
+    environment:
+      - graphdb=http://graphdb:7200
+    ports:
+      - 9090:8080

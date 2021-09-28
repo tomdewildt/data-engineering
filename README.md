@@ -25,3 +25,5 @@ Run ```make stack/list``` to list all stacks and ```make stack/delete name=[NAME
 [Docker Docs](https://docs.docker.com/)
 
 [Dockerfile Docs](https://docs.docker.com/engine/reference/builder/)
+
+[Docker Compose Docs](https://docs.docker.com/compose/)
