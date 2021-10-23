@@ -3,7 +3,7 @@ resources:
     type: compute.v1.instance
     properties:
       zone: europe-west3-c
-      machineType: zones/europe-west3-c/machineTypes/e2-medium
+      machineType: zones/europe-west3-c/machineTypes/e2-standard-4
       disks:
         - deviceName: jads-delabs-shared-cpd-a8e3
           type: PERSISTENT
@@ -26,6 +26,7 @@ resources:
           - http
           - https
           - jupyter
+          - spark
           - graphdb
           - api-1
           - api-2
@@ -68,6 +69,32 @@ resources:
         - IPProtocol: TCP
           ports:
             - 8888
+
+  - name: jads-delabs-shared-fwr-allow-spark-driver
+    type: compute.v1.firewall
+    properties:
+      priority: 1000
+      targetTags:
+        - spark
+      sourceRanges:
+        - 0.0.0.0/0
+      allowed:
+        - IPProtocol: TCP
+          ports:
+            - 4040
+
+  - name: jads-delabs-shared-fwr-allow-spark-master
+    type: compute.v1.firewall
+    properties:
+      priority: 1000
+      targetTags:
+        - spark
+      sourceRanges:
+        - 0.0.0.0/0
+      allowed:
+        - IPProtocol: TCP
+          ports:
+            - 7077
 
   - name: jads-delabs-shared-fwr-allow-graphdb
     type: compute.v1.firewall
