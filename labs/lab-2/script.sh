@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Configure external address
+echo -e "\nexport EXTERNAL_ADDRESS=\$(curl -s https://checkip.amazonaws.com/)" >> .bashrc
+
 # Update & upgrade packages
 sudo apt-get update -y
 sudo apt-get upgrade -y
