@@ -1,0 +1,27 @@
+resources:
+  - name: delabs-input
+    type: storage.v1.bucket
+    properties:
+      storageClass: STANDARD
+      location: EUROPE-WEST3
+      iamConfiguration:
+        uniformBucketLevelAccess:
+          enabled: true
+
+  - name: delabs-output
+    type: storage.v1.bucket
+    properties:
+      storageClass: STANDARD
+      location: EUROPE-WEST3
+      iamConfiguration:
+        uniformBucketLevelAccess:
+          enabled: true
+
+  - name: delabs-temp
+    type: storage.v1.bucket
+    properties:
+      storageClass: STANDARD
+      location: EUROPE-WEST3
+      iamConfiguration:
+        uniformBucketLevelAccess:
+          enabled: true

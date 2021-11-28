@@ -23,39 +23,11 @@ resources:
             - https://www.googleapis.com/auth/cloud-platform
       tags:
         items:
-          - http
-          - https
           - jupyter
           - spark
           - graphdb
           - api-1
           - api-2
-
-  - name: jads-delabs-shared-fwr-allow-http
-    type: compute.v1.firewall
-    properties:
-      priority: 1000
-      targetTags:
-        - http
-      sourceRanges:
-        - 0.0.0.0/0
-      allowed:
-        - IPProtocol: TCP
-          ports:
-            - 80
-
-  - name: jads-delabs-shared-fwr-allow-https
-    type: compute.v1.firewall
-    properties:
-      priority: 1000
-      targetTags:
-        - https
-      sourceRanges:
-        - 0.0.0.0/0
-      allowed:
-        - IPProtocol: TCP
-          ports:
-            - 443
 
   - name: jads-delabs-shared-fwr-allow-jupyter
     type: compute.v1.firewall

@@ -1,0 +1,45 @@
+resources:
+  - name: jads-delabs-shared-bqd-d6c5
+    type: bigquery.v2.dataset
+    properties:
+      datasetReference:
+        datasetId: lab6
+      location: europe-west3
+
+  - name: jads-delabs-shared-bqt-c1d5
+    type: bigquery.v2.table
+    properties:
+      datasetId: lab6
+      tableReference:
+        tableId: retaildata
+      schema:
+        fields:
+          - name: InvoiceNo
+            type: INT64
+          - name: StockCode
+            type: INT64
+          - name: Description
+            type: STRING
+          - name: Quantity
+            type: INT64
+          - name: InvoiceDate
+            type: STRING
+          - name: UnitPrice
+            type: Float64
+          - name: CustomerID
+            type: INT64
+          - name: Country
+            type: STRING
+
+  - name: jads-delabs-shared-bqt-d6e7
+    type: bigquery.v2.table
+    properties:
+      datasetId: lab6
+      tableReference:
+        tableId: wordcounts
+      schema:
+        fields:
+          - name: word
+            type: STRING
+          - name: count
+            type: INT64
