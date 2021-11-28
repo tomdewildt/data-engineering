@@ -1,19 +1,3 @@
-CREATE TABLE IF NOT EXISTS lab6.retaildata(
-    InvoiceNo INT64,
-    StockCode INT64,
-    Description STRING,
-    Quantity INT64,
-    InvoiceDate STRING,
-    UnitPrice Float64,
-    CustomerID INT64,
-    Country STRING,
-);
-
-CREATE TABLE IF NOT EXISTS lab6.wordcounts(
-    word STRING,
-    count INT64,
-);
-
 INSERT lab6.retaildata (
     InvoiceNo,
     StockCode,
