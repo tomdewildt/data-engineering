@@ -25,6 +25,7 @@ resources:
         items:
           - jupyter
           - spark
+          - kafka
           - graphdb
           - api-1
           - api-2
@@ -67,6 +68,19 @@ resources:
         - IPProtocol: TCP
           ports:
             - 7077
+
+  - name: jads-delabs-shared-fwr-allow-kafka
+    type: compute.v1.firewall
+    properties:
+      priority: 1000
+      targetTags:
+        - kafka
+      sourceRanges:
+        - 0.0.0.0/0
+      allowed:
+        - IPProtocol: TCP
+          ports:
+            - 9092
 
   - name: jads-delabs-shared-fwr-allow-graphdb
     type: compute.v1.firewall
