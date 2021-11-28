@@ -43,3 +43,10 @@ resources:
             type: STRING
           - name: count
             type: INT64
+
+  - name: jads-delabs-shared-bqd-fd6c
+    type: bigquery.v2.dataset
+    properties:
+      datasetReference:
+        datasetId: lab7
+      location: europe-west3
