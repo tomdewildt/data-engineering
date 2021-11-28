@@ -73,7 +73,7 @@ services:
       - checkpoint:/home/jovyan/checkpoint
 
   zookeeper:
-    image: zookeeper:3.4.9
+    image: zookeeper:3.7.0
     ports:
       - 2181:2181
 
